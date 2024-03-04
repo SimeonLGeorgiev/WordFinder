@@ -3,13 +3,13 @@ import java.util.*;
 
 public class Main {
     static Set<String> allWords;
-    static Trie trie;
+    static Tree tree;
 
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
 
         allWords = WordHelper.loadAllWords();
-        trie = WordHelper.loadWordsInTrie(allWords);
+        tree = WordHelper.loadWordsInTree(allWords);
         Set<String> nineLetterWords = WordHelper.getAllNineLetterWords(allWords);
         List<String> solution = extractSolutionWords(nineLetterWords);
 
@@ -30,7 +30,7 @@ public class Main {
         }
         for (int i = 0; i < childWord.length(); i++) {
             String currentWord = WordHelper.removeOneLetterFromTheWord(childWord, i);
-            if (trie.search(currentWord)) {
+            if (tree.search(currentWord)) {
                 if (findWords(currentWord)) {
                     return true;
                 }

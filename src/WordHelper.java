@@ -16,10 +16,10 @@ public class WordHelper {
         return allWords;
     }
 
-    static Trie loadWordsInTrie(Set<String> words) {
-        Trie trie = new Trie();
-        words.forEach(trie::insert);
-        return trie;
+    static Tree loadWordsInTree(Set<String> words) {
+        Tree tree = new Tree();
+        words.forEach(tree::insert);
+        return tree;
     }
 
     static Set<String> getAllNineLetterWords(Set<String> allWords) {

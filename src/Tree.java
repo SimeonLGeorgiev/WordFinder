@@ -1,15 +1,15 @@
-class Trie {
-    private TrieNode root;
+class Tree {
+    private TreeNode root;
 
-    public Trie() {
-        root = new TrieNode();
+    public Tree() {
+        root = new TreeNode();
     }
 
     public void insert(String word) {
-        TrieNode node = root;
+        TreeNode node = root;
         for (char ch : word.toCharArray()) {
             if (!node.containsKey(ch)) {
-                node.put(ch, new TrieNode());
+                node.put(ch, new TreeNode());
             }
             node = node.get(ch);
         }
@@ -20,7 +20,7 @@ class Trie {
         if (word.equals("A") || word.equals("I")) {
             return true;
         }
-        TrieNode node = root;
+        TreeNode node = root;
         for (char ch : word.toCharArray()) {
             if (!node.containsKey(ch)) {
                 return false;

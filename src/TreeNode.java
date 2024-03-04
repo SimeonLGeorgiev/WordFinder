@@ -1,5 +1,5 @@
-class TrieNode {
-    private final TrieNode[] children = new TrieNode[52];
+class TreeNode {
+    private final TreeNode[] children = new TreeNode[52];
     private boolean isEndOfWord;
 
     private int getIndex(char ch) {
@@ -14,11 +14,11 @@ class TrieNode {
         return children[getIndex(ch)] != null;
     }
 
-    public TrieNode get(char ch) {
+    public TreeNode get(char ch) {
         return children[getIndex(ch)];
     }
 
-    public void put(char ch, TrieNode node) {
+    public void put(char ch, TreeNode node) {
         children[getIndex(ch)] = node;
     }
 
