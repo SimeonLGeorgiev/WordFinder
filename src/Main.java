@@ -2,15 +2,15 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    static Set<String> words;
+    static Set<String> allWords;
     static Trie trie;
 
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
 
-        words = WordHelper.loadAllWords();
-        trie = WordHelper.loadWordsInTrie(words);
-        Set<String> nineLetterWords = WordHelper.getAllNineLetterWords(words);
+        allWords = WordHelper.loadAllWords();
+        trie = WordHelper.loadWordsInTrie(allWords);
+        Set<String> nineLetterWords = WordHelper.getAllNineLetterWords(allWords);
         List<String> solution = extractSolutionWords(nineLetterWords);
 
         long endTime = System.currentTimeMillis();
